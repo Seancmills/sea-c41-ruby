@@ -13,3 +13,10 @@
 #   What's your last name?
 #   Jackson
 #   Nice to meet you, Samuel Leroy Jackson.
+puts 'What\'s your first name?'
+firstName = gets.chomp
+puts 'What\'s your middle name?'
+middleName = gets.chomp
+puts 'What\'s your last name?'
+lastName = gets.chomp
+puts 'Nice to meet you, ' + firstName + ' ' + middleName + ' ' + lastName + "."
