@@ -17,3 +17,20 @@
 # TIP #2: Use the `string.ljust` method from class 2 exercise 7.
 #
 # TIP #3: The width of each line is 50 characters.
+
+songs = ['Can I Kick It?', 'Rump Shaker', 'Check Yo Self', 'Regulate']
+(songs << ['I Got 5 On It', 'Ready Or Not']).flatten!
+
+artist = ['A Tribe Called Quest', 'Wreckx-n-Effect', 'Ice Cube']
+(artist << ['Warren G & Nate Dogg', 'Luniz', 'The Fugees']).flatten!
+
+yrs = %w(1991 1992 1993 1994 1995 1996)
+
+i = 0
+
+songs.each do
+  print songs[i].ljust(20)
+  print artist[i].ljust(20)
+  puts yrs[i].rjust(10)
+  i += 1
+end

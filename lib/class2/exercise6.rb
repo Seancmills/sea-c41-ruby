@@ -12,3 +12,8 @@
 puts 'CAN\'T YOU SEE I\'M BUSY?! MAKE IT FAST, JOHNSON!'
 response = gets.chomp
 puts 'WHADDAYA MEAN '+ "'" + response.upcase + "'" +'?!? YOU\'RE FIRED!!'
+
+#teacher example
+#puts 'CAN\'T YOU SEE I\'M BUSY?! MAKE IT FAST, JOHNSON!'
+#demand = gets.chomp.upcase
+#puts 'WHADDAYA MEAN '+ #{demand} +'?!? YOU\'RE FIRED!!'
