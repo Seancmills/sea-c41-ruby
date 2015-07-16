@@ -23,15 +23,16 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  File.absolute_path(File.dirname(__FILE__) + ('/database.yml'))
 end
 
 def load
-  { replace: 'me' }
+  YAML.load_file(database)
 end
 
 def remove(key)
-  key # fix me
+  person = load
+  person.delete(key.to_sym)
 end
 
 input = ARGV[0]

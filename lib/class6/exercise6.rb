@@ -22,17 +22,21 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  File.absolute_path(File.dirname(__FILE__) + ('/database.yml'))
 end
 
 def load
-  { replace: 'me' }
+  YAML.load_file(database)
 end
 
 def update(key, value)
-  key + value # fix me
+  person = load
+  person = person.merge(key.to_sym => value)
+  filename = database
+  File.open filename, 'w' do |f|
+    f.write person.to_yaml
+  end
 end
-
 input1, input2 = ARGV
 
 abort 'Usage: exercise5.rb KEY VALUE' unless input1 && input2
