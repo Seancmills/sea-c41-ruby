@@ -30,12 +30,36 @@
 # instance variable should be assigned once and only once.
 #
 # Where should it be assigned? From within the initialize method. Once assigned,
-# the `@fruit` instance variable should never, ever change.
+# the `@fruit` instance variable sh ould never, ever change.
 #
 # If you feel compelled to reassign `@fruit` outside the initialize method, you
 # should stop and rethink your approach.
 
 # rubocop:disable TrivialAccessors
 class OrangeTree
-  # replace me
+  attr_reader :fruit
+
+  def initialize(fruit = 50)
+    @fruit = fruit
+  end
+
+  def pick!(amount = 1)
+    if @fruit - amount < 0
+      nil
+    else
+      @fruit -= amount
+    end
+  end
+
+  def pick(amount = 1)
+    if @fruit - amount < 0
+      nil
+    else
+      OrangeTree.new(@fruit - amount)
+    end
+  end
+
+  def ==(other)
+    @fruit == other.fruit
+  end
 end
